@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Multi_Drive_Copy_Utiliy
+namespace Multi_Drive_Copy_Utility
 {
     static class Program
     {

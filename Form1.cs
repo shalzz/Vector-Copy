@@ -7,16 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using Microsoft.VisualBasic.FileIO;
 
-namespace Multi_Drive_Copy_Utiliy
+namespace Multi_Drive_Copy_Utility
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
-            // click the refresh button on form initialization
-            copyFile.PerformClick();
+        }
+ 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // click the refresh button when form is loaded
+            refreshList.PerformClick();
+
+            //  Change the UI
+            listBox1.Enabled = false;
+            refreshList.Enabled = false;
+            radioButton3.Enabled = false;
+            radioButton4.Enabled = false;
+            radioButton5.Enabled = false;
         }
 
         private void selectFile_Click(object sender, EventArgs e)
@@ -26,88 +38,106 @@ namespace Multi_Drive_Copy_Utiliy
             textBox1.Text = openFileDialog1.FileName;
         }
 
+        private int fileCopy(String source, String destination)
+        {
+            try
+            {
+                FileSystem.CopyFile(source, destination, UIOption.AllDialogs, UICancelOption.ThrowException);
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Copying Canceled!\n"+ex.Message);
+                return 1;
+            }
+        }
+
         private void copyFile_Click(object sender, EventArgs e)
         {
             // Get the file name
             String sourceFile = textBox1.Text;
             int index = sourceFile.LastIndexOf("\\");
             String fileName = sourceFile.Substring(index + 1);
+            int state = 0;
 
-            // For Manual selection
-            if (radioButton1.Checked)
+            if (sourceFile.Length != 0)
             {
-                // Copy file into each Selected Drive
-                foreach (Object selecteditem in listBox1.SelectedItems)
+                if (radioButton1.Checked)              // For Manual selection
                 {
-                    // Extract the Drive letter from ListBox Item
-                    String item = selecteditem as String;
-                    int itemIndex = item.LastIndexOf("\\");
-                    String driveLetter = item.Substring(0, itemIndex);
-                    // Form the complete address
-                    String destFile = driveLetter + "\\" + fileName;
-                    File.Copy(sourceFile, destFile, true);
-                }
-                MessageBox.Show("Copy Complete!");
-            }
-
-            // For automatic selection
-            if (radioButton2.Checked)
-            {
-                if (radioButton3.Checked)
-                {
-                    DriveInfo[] drives = DriveInfo.GetDrives();
-                    foreach (DriveInfo Drive in drives)
+                    if (listBox1.SelectedIndices != null)
                     {
-                        try
+                        // Copy file into each Selected Drive
+                        foreach (Object selecteditem in listBox1.SelectedItems)
                         {
+                            // Extract the Drive letter from ListBox Item
+                            String item = selecteditem as String;
+                            int itemIndex = item.LastIndexOf("\\");
+                            String driveLetter = item.Substring(0, itemIndex);
+                            // Form the complete address
+                            String destFile = driveLetter + "\\" + fileName;
+                            
+                            // Call the filecopy function 
+                            state = fileCopy(sourceFile,destFile);
+                            if (state == 1) break;
+                        }
+                        if (state == 0) MessageBox.Show("Copying Complete!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select atleast one Drive");
+                    }
+                }
+                else if (radioButton2.Checked)       // For automatic selection
+                {
+                    if (radioButton3.Checked)
+                    {
+                        DriveInfo[] drives = DriveInfo.GetDrives();
+                        foreach (DriveInfo Drive in drives)
+                        {
+                            // Call the filecopy function
                             if (Drive.DriveType == DriveType.Removable)
-                                File.Copy(sourceFile, Drive.Name + "\\" + fileName, true);
+                                state = fileCopy(sourceFile, Drive.Name + "\\" + fileName);
+                            if (state == 1) break;
                         }
-                        catch(Exception ex)
-                        {
-                                MessageBox.Show(ex.Message);
-                        }
+                        if (state == 0) MessageBox.Show("Copying Complete!");
                     }
-                    MessageBox.Show("Copy Complete!");
-                }
-                else if (radioButton4.Checked)
-                {
-                     DriveInfo[] drives = DriveInfo.GetDrives();
-                     foreach (DriveInfo Drive in drives)
+                    else if (radioButton4.Checked)
                     {
-                        try
+                        DriveInfo[] drives = DriveInfo.GetDrives();
+                        foreach (DriveInfo Drive in drives)
                         {
+                            // Call the filecopy function
                             if (Drive.DriveType == DriveType.Fixed)
-                                File.Copy(sourceFile, Drive.Name + "\\" + fileName, true);
+                                state = fileCopy(sourceFile, Drive.Name + "\\" + fileName);
+                            if (state == 1) break;
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
+                        if (state == 0) MessageBox.Show("Copying Complete!");
                     }
-                    MessageBox.Show("Copy Complete!");
-                }
-                else if (radioButton5.Checked)
-                {
-                    DriveInfo[] drives = DriveInfo.GetDrives();
-                    foreach (DriveInfo Drive in drives)
+                    else if (radioButton5.Checked)
                     {
-                        try
+                        DriveInfo[] drives = DriveInfo.GetDrives();
+                        foreach (DriveInfo Drive in drives)
                         {
+                            // Call the filecopy function
                             if (Drive.DriveType == DriveType.CDRom)
-                                File.Copy(sourceFile, Drive.Name + "\\" + fileName, true);
+                                state = fileCopy(sourceFile, Drive.Name + "\\" + fileName);
+                            if (state == 1) break;
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
+                        if (state == 0) MessageBox.Show("Copying Complete!");
                     }
-                    MessageBox.Show("Copy Complete!");
+                    else
+                    {
+                        MessageBox.Show("Please select a type of Drive you wish to copy to");
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Please select an Option");
                 }
+            }
+            else
+            {
+                MessageBox.Show("Please select a file to copy");
             }
         }
 
@@ -140,6 +170,12 @@ namespace Multi_Drive_Copy_Utiliy
             radioButton3.Enabled = true;
             radioButton4.Enabled = true;
             radioButton5.Enabled = true;
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Form2 a = new Form2();
+            a.Visible = true;
         }
        
     }
