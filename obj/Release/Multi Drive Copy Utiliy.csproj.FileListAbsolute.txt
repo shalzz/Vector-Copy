@@ -1,8 +1,0 @@
-C:\Users\500029490\Documents\Visual Studio 2012\Projects\upes\Multi Drive Copy Utiliy\bin\Release\Multi Drive Copy Utiliy.exe
-C:\Users\500029490\Documents\Visual Studio 2012\Projects\upes\Multi Drive Copy Utiliy\bin\Release\Multi Drive Copy Utiliy.pdb
-C:\Users\500029490\Documents\Visual Studio 2012\Projects\upes\Multi Drive Copy Utiliy\obj\Release\Multi Drive Copy Utiliy.csprojResolveAssemblyReference.cache
-C:\Users\500029490\Documents\Visual Studio 2012\Projects\upes\Multi Drive Copy Utiliy\obj\Release\Multi_Drive_Copy_Utiliy.Form1.resources
-C:\Users\500029490\Documents\Visual Studio 2012\Projects\upes\Multi Drive Copy Utiliy\obj\Release\Multi_Drive_Copy_Utiliy.Properties.Resources.resources
-C:\Users\500029490\Documents\Visual Studio 2012\Projects\upes\Multi Drive Copy Utiliy\obj\Release\Multi Drive Copy Utiliy.csproj.GenerateResource.Cache
-C:\Users\500029490\Documents\Visual Studio 2012\Projects\upes\Multi Drive Copy Utiliy\obj\Release\Multi Drive Copy Utiliy.exe
-C:\Users\500029490\Documents\Visual Studio 2012\Projects\upes\Multi Drive Copy Utiliy\obj\Release\Multi Drive Copy Utiliy.pdb
