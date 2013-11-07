@@ -1,4 +1,24 @@
-﻿namespace Multi_Drive_Copy_Utility
+﻿/*
+ * Vector Copy - A Multi Drive Copy Utility
+ * Copyright (C) 2013  
+ * Shaleen Jain
+ * shalzz@outlook.com
+ * 
+ * Vector Copy is a free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>. 
+ */
+
+namespace Vector_Copy
 {
     partial class Form1
     {
@@ -43,10 +63,10 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.refreshList = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.refreshList = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -182,16 +202,6 @@
             this.radioButton5.Text = "CD Roms";
             this.radioButton5.UseVisualStyleBackColor = true;
             // 
-            // refreshList
-            // 
-            this.refreshList.Image = global::Multi_Drive_Copy_Utility.Properties.Resources.refresh_black;
-            this.refreshList.Location = new System.Drawing.Point(468, 90);
-            this.refreshList.Name = "refreshList";
-            this.refreshList.Size = new System.Drawing.Size(24, 24);
-            this.refreshList.TabIndex = 5;
-            this.refreshList.UseVisualStyleBackColor = true;
-            this.refreshList.Click += new System.EventHandler(this.refreshList_Click);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.radioButton5);
@@ -223,6 +233,16 @@
             this.toolStripButton1.Text = "About Us";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // refreshList
+            // 
+            this.refreshList.Image = global::Vector_Copy.Properties.Resources.refresh_black;
+            this.refreshList.Location = new System.Drawing.Point(468, 90);
+            this.refreshList.Name = "refreshList";
+            this.refreshList.Size = new System.Drawing.Size(24, 24);
+            this.refreshList.TabIndex = 5;
+            this.refreshList.UseVisualStyleBackColor = true;
+            this.refreshList.Click += new System.EventHandler(this.refreshList_Click);
+            // 
             // Form1
             // 
             this.AcceptButton = this.copyFile;
@@ -241,10 +261,11 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.shapeContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Multi Drive Copy Utility";
+            this.Text = "Vector Copy";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

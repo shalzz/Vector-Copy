@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Multi_Drive_Copy_Utility.Properties {
+namespace Vector_Copy.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Multi_Drive_Copy_Utility.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Multi_Drive_Copy_Utility.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Vector_Copy.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -106,6 +106,16 @@ namespace Multi_Drive_Copy_Utility.Properties {
         internal static System.Drawing.Bitmap Refresh_icon_small {
             get {
                 object obj = ResourceManager.GetObject("Refresh_icon_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VectorCopy_small {
+            get {
+                object obj = ResourceManager.GetObject("VectorCopy_small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

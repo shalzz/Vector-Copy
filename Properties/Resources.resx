@@ -118,12 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Refresh_icon_extra_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Refresh_icon_extra_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Refresh_icon_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Refresh_icon_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="refresh_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh_black.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -132,5 +126,14 @@
   </data>
   <data name="refresh_black_single" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh_black_single.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Refresh_icon_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Refresh_icon_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Refresh_icon_extra_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Refresh_icon_extra_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VectorCopy_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VectorCopy-small1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
